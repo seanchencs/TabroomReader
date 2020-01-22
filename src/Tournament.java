@@ -221,7 +221,7 @@ public class Tournament {
     }
 
     public List<School> mostSuccessfulSchools(int count){
-        Collections.sort(schools, (o1, o2) -> (int)(o2.getWinPercentage()*1000-o1.getWinPercentage()*1000));
+        Collections.sort(schools, (o1, o2) -> (int)(o2.getWinCount()-o1.getWinCount());
         List<School> output = new ArrayList<>();
         for(School t : schools){
             if(t.getRoundCount() > 20){
