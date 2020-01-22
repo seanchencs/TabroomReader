@@ -43,57 +43,66 @@ public class RoundProcessor {
         }
 
         int count = 20;
+        int rank = 1;
         System.out.println("Top " + count + " teams by win rate (Min. 10 rounds):");
         for (Team team : t.topWinRate(count)) {
-            System.out.println(team);
+            System.out.println(rank++ + ". " + team);
         }
         System.out.println();
 
+        rank = 1;
         System.out.println("Top " + count + " most active teams: ");
         for (Team team : t.mostActiveTeams(count)) {
-            System.out.println(team);
+            System.out.println(rank++ + ". " + team);
         }
         System.out.println();
 
+        rank = 1;
         System.out.println("Top " + count + " most active schools:");
         for (School s : t.mostActiveSchools(count)) {
-            System.out.println(s.getName() + ": " + s.getRoundCount());
+            System.out.println(rank++ + ". " + s.getName() + ": " + s.getRoundCount());
         }
         System.out.println();
 
+        rank = 1;
         System.out.println("Top " + count + " most successful schools:");
         for (School s : t.mostSuccessfulSchools(count)) {
-            System.out.println(s.getName() + ": " + formatter.format(s.getWinPercentage() * 100) + "% - " + s.getWinCount() + "W " + s.getLossCount() + "L");
+            System.out.println(rank++ + ". " + s.getName() + ": " + formatter.format(s.getWinPercentage() * 100) + "% - " + s.getWinCount() + "W " + s.getLossCount() + "L");
         }
         System.out.println();
 
+        rank = 1;
         System.out.println("Top " + count + " most active judges:");
         for (Judge j : t.mostActiveJudges(count)) {
-            System.out.println(j.getName() + ": " + j.getRoundCount());
+            System.out.println(rank++ + ". " + j.getName() + ": " + j.getRoundCount());
         }
         System.out.println();
 
+        rank = 1;
         System.out.println("Top " + count + " most aff biased judges:");
         for (Judge j : t.mostAffBiasedJudges(count)) {
-            System.out.println(j.getName() + ": " + formatter.format(j.getAffPercentage() * 100) + "% - " + j.getRoundCount() + " Rounds");
+            System.out.println(rank++ + ". " + j.getName() + ": " + formatter.format(j.getAffPercentage() * 100) + "% - " + j.getRoundCount() + " Rounds");
         }
         System.out.println();
 
+        rank = 1;
         System.out.println("Top " + count + " most neg biased judges:");
         for (Judge j : t.mostNegBiasedJudges(count)) {
-            System.out.println(j.getName() + ": " + formatter.format(j.getNegPercentage() * 100) + "% - " + j.getRoundCount() + " Rounds");
+            System.out.println(rank++ + ". " + j.getName() + ": " + formatter.format(j.getNegPercentage() * 100) + "% - " + j.getRoundCount() + " Rounds");
         }
         System.out.println();
 
+        rank = 1;
         System.out.println("Top " + count + " highest speaker point judges:");
         for (Judge j : t.highestSpeakerPointJudges(count)) {
-            System.out.println(j.getName() + ": " + formatter.format(j.getAverageSpeakerPoints()) + " - " + j.getRoundCount() + " Rounds");
+            System.out.println(rank++ + ". " + j.getName() + ": " + formatter.format(j.getAverageSpeakerPoints()) + " - " + j.getRoundCount() + " Rounds");
         }
         System.out.println();
 
+        rank = 1;
         System.out.println("Top " + count + " lowest speaker point judges:");
         for (Judge j : t.lowestSpeakerPointJudges(count)) {
-            System.out.println(j.getName() + ": " + formatter.format(j.getAverageSpeakerPoints()) + " - " + j.getRoundCount() + " Rounds");
+            System.out.println(rank++ + ". " + j.getName() + ": " + formatter.format(j.getAverageSpeakerPoints()) + " - " + j.getRoundCount() + " Rounds");
         }
         System.out.println();
 
