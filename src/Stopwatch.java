@@ -1,5 +1,5 @@
 /**
- A class to measure time elapsed.
+ * Mike Scott's class to measure time elapsed.
 */
 
 public class Stopwatch
