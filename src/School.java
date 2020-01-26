@@ -1,5 +1,6 @@
 import java.text.DecimalFormat;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class School implements Comparable<School>{
@@ -64,6 +65,7 @@ public class School implements Comparable<School>{
         output.append("L (");
         output.append(formatter.format(getWinPercentage()*100));
         output.append("%)\n");
+        Collections.sort(teams, (o1, o2) -> o2.getWinCount() - o1.getWinCount());
         for(Team t : teams){
             output.append(t);
             output.append("\n");
