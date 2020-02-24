@@ -1,7 +1,10 @@
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.text.DecimalFormat;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.Scanner;
 
 public class Tournament {
     private String tournamentName;
@@ -168,7 +171,7 @@ public class Tournament {
         return 1 - getAffPercentage();
     }
 
-    //tounament analysis
+    //tournament analysis
     public String toString(){
         StringBuilder output = new StringBuilder();
         DecimalFormat formatter = new DecimalFormat("00.00");
@@ -221,7 +224,7 @@ public class Tournament {
     }
 
     public List<School> mostSuccessfulSchools(int count){
-        Collections.sort(schools, (o1, o2) -> (int)(o2.getWinCount()-o1.getWinCount()));
+        Collections.sort(schools, (o1, o2) -> o2.getWinCount() - o1.getWinCount());
         List<School> output = new ArrayList<>();
         for(School t : schools){
             if(t.getRoundCount() > 20){
